@@ -1,10 +1,10 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import HomePage from "./pages/HomePage";
+import SignupPage from "./pages/UserPages/SignupPage";
+import ProfilePage from "./pages/UserPages/ProfilePage";
+import LoginPage from "./pages/UserPages/LoginPage";
 import AllLeaguesPage from "./pages/LeaguePages/AllLeaguesPage";
 import CourtsPage from "./pages/LeaguePages/CourtsPage";
 import GalleryPage from "./pages/LeaguePages/GalleryPage";
