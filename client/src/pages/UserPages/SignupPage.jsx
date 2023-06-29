@@ -1,4 +1,4 @@
-import "./SignupPage.css";
+import "./SignupPage.jsx";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
@@ -6,19 +6,21 @@ import authService from "../../services/auth.service";
 function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
+  const handleFirstName = (e) => setFirstName(e.target.value);
+  const handleLastName = (e) => setLastName(e.target.value);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     // Create an object representing the request body
-    const requestBody = { email, password, name };
+    const requestBody = { email, password, firstName, lastName };
 
     // Send a request to the server using axios
     /* 
@@ -52,6 +54,10 @@ function SignupPage() {
       <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
+        <label>First Name:</label>
+        <input type="text" name="firstName" value={firstName} onChange={handleFirstName} />
+        <label>Last Name:</label>
+        <input type="text" name="lastName" value={lastName} onChange={handleLastName} />
 
         <label>Password:</label>
         <input
@@ -60,9 +66,6 @@ function SignupPage() {
           value={password}
           onChange={handlePassword}
         />
-
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
 
         <button type="submit">Sign Up</button>
       </form>
