@@ -5,6 +5,8 @@ const AdminPage = () => {
   const [teams, setTeams] = useState([]);
   const [editingTeamId, setEditingTeamId] = useState(null);
   const [newTeamName, setNewTeamName] = useState("");
+  const [newTeamWins, setNewTeamWins] = useState("0");
+  const [newTeamLosses, setNewTeamLosses] = useState("0");
 
   useEffect(() => {
     fetchTeams();
@@ -61,6 +63,10 @@ const AdminPage = () => {
   const updateTeam = (teamId) => {
     const updatedTeam = {
       name: newTeamName,
+      statistics: {
+        wins: newTeamWins,
+        losses: newTeamLosses,
+      },
     };
 
     axios
@@ -88,6 +94,7 @@ const AdminPage = () => {
             createTeam();
           }}
         >
+          {/* Team Name */}
           <label className="block mb-2">
             Team Name:
             <input
@@ -95,6 +102,28 @@ const AdminPage = () => {
               className="border border-gray-300 rounded-md p-2"
               value={newTeamName}
               onChange={(e) => setNewTeamName(e.target.value)}
+              required
+            />
+          </label>
+          {/* Team Wins */}
+          <label className="block mb-2">
+            Team Wins:
+            <input
+              type="number"
+              className="border border-gray-300 rounded-md p-2"
+              value={newTeamWins}
+              onChange={(e) => setNewTeamWins(e.target.value)}
+              required
+            />
+          </label>
+          {/* Team Losses */}
+          <label className="block mb-2">
+            Team Wins:
+            <input
+              type="number"
+              className="border border-gray-300 rounded-md p-2"
+              value={newTeamLosses}
+              onChange={(e) => setNewTeamLosses(e.target.value)}
               required
             />
           </label>
