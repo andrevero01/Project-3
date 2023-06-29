@@ -1,3 +1,7 @@
+
+import "./ProfilePage.jsx";
+
+
 function ProfilePage() {
   return (
     <div>

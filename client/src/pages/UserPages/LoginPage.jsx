@@ -1,3 +1,6 @@
+
+import "./LoginPage.jsx";
+
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
@@ -50,7 +53,7 @@ function LoginPage() {
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
-
+        
         <label>Password:</label>
         <input
           type="password"
