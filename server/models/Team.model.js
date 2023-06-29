@@ -1,6 +1,9 @@
+
 const { Schema, model } = require("mongoose");
 
 const teamSchema = new Schema({
+  _id: ObjectId,
+
   name: String,
   players: [{
     type: Schema.Types.ObjectId,
@@ -15,7 +18,6 @@ const teamSchema = new Schema({
     losses: Number
   }
 });
-
 
 const Team = model("Team", teamSchema);
 

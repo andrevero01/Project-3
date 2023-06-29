@@ -1,4 +1,10 @@
+
 import React from 'react'
+
+
+import "./ProfilePage.jsx";
+
+
 
 function ProfilePage() {
   return (

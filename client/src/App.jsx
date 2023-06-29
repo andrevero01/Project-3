@@ -19,6 +19,7 @@ import RulesPage from "./pages/RulesPage";
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
@@ -69,6 +70,9 @@ function App() {
         <Route path="/admin" element={<AdminPage />} />
 
         <Route path="/rules" element={<RulesPage />} />
+
+        <Route path="/admin" element=<AdminPage /> />
+
       </Routes>
     </div>
   );
