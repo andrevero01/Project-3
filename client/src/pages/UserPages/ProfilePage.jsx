@@ -1,13 +1,15 @@
 
+import React from 'react'
+
+
 import "./ProfilePage.jsx";
+
 
 
 function ProfilePage() {
   return (
-    <div>
-      <h1>Profile page</h1>
-    </div>
-  );
+    <div>ProfilePage</div>
+  )
 }
 
-export default ProfilePage;
+export default ProfilePage

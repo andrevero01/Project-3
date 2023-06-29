@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import adminService from '../../services/admin.service';
 
@@ -50,9 +51,11 @@ function AdminPage() {
 
   return (
     <div>
+            <TeamsComponent />
       <h2>Create a fellow user or comrade</h2>
 
       {errorMessage && <p>{errorMessage}</p>}
+
 
       <form onSubmit={handleSubmit}>
         <label>Email:</label>
@@ -69,8 +72,10 @@ function AdminPage() {
 
         <button type="submit">Create User</button>
       </form>
+
     </div>
   );
 }
 
 export default AdminPage;
+
